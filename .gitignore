@@ -1,8 +1,11 @@
 venv/
 national1724.pkl
+
+# Unified experiment artifacts (models, checkpoints, reports)
 artifacts/
 
-# CatBoost runtime artifacts
+# Legacy output folders kept for backward compatibility
+models/
 catboost_info/
 
 # Jupyter and Python cache files
