@@ -1,12 +1,9 @@
 venv/
 national1724.pkl
+dataset/
 
 # Unified experiment artifacts (models, checkpoints, reports)
 artifacts/
-
-# Legacy output folders kept for backward compatibility
-models/
-catboost_info/
 
 # Jupyter and Python cache files
 .ipynb_checkpoints/
