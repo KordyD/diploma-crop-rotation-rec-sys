@@ -11,6 +11,14 @@ __pycache__/
 *.py[cod]
 
 diploma/crop-rotation/*
-!diploma/crop-rotation/draft.tex
+!diploma/crop-rotation/*.tex
 !diploma/crop-rotation/md
-!diploma/crop-rotation/draft.pdf
+!diploma/crop-rotation/*.pdf
+!diploma/crop-rotation/chapters/
+!diploma/crop-rotation/chapters/*.tex
+!diploma/crop-rotation/frontmatter/
+!diploma/crop-rotation/frontmatter/*.tex
+!diploma/crop-rotation/backmatter/
+!diploma/crop-rotation/backmatter/*.tex
+!diploma/crop-rotation/styles/
+!diploma/crop-rotation/styles/*.sty
