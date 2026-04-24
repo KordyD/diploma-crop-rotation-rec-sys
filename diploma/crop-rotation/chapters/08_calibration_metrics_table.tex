@@ -1,0 +1,26 @@
+\begin{center}
+\small
+\begin{longtable}{p{0.18\textwidth} r r r r r}
+\caption{Калибровочные метрики на preview-выборках}
+\label{tab:calibration-metrics}\\
+\toprule
+Split & ECE & Brier & Mean confidence & Accuracy@1 & \makecell[r]{Число\\объектов} \\
+\midrule
+\endfirsthead
+
+\toprule
+Split & ECE & Brier & Mean confidence & Accuracy@1 & \makecell[r]{Число\\объектов} \\
+\midrule
+\endhead
+
+\bottomrule
+\endlastfoot
+
+validation & 0.02305 & 0.16440 & 0.75026 & 0.73560 & 5 000 \\
+test & 0.01737 & 0.16120 & 0.75398 & 0.74800 & 5 000 \\
+
+\end{longtable}
+\footnotesize
+Источник значений: \path{artifacts/results/recommendation/calibration_metrics_baseline.csv}.
+\normalsize
+\end{center}

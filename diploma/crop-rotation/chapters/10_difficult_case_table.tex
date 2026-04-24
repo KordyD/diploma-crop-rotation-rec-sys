@@ -1,0 +1,35 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Difficult-case: краткая карточка наблюдения}
+\label{tab:difficult-case-card}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.36\textwidth}|>{\raggedright\arraybackslash}p{0.58\textwidth}|}
+\hline
+Параметр & Значение \\
+\hline
+История поля & \texttt{corn $\rightarrow$ corn $\rightarrow$ cotton} \\
+\hline
+\texttt{true\_target} & \texttt{soybeans} \\
+\hline
+Top-1 модели / вероятность / уверенность & \texttt{corn}, $p_1 = 0.6887$, \texttt{medium\_confidence} \\
+\hline
+\texttt{true\_target} в shortlist & Да \\
+\hline
+Shortlist (Top-3) & \texttt{corn} (0.6887), \texttt{cotton} (0.2118), \texttt{soybeans} (0.0835) \\
+\hline
+Лучший кандидат по graph support & \texttt{soybeans} \\
+\hline
+Graph support (best candidate) & 0.3863 \\
+\hline
+Интерпретация & Сложный кейс: top-1 ошибается, но \texttt{true\_target} присутствует в shortlist и сильнее поддержан графом. \\
+\hline
+\end{tabular}
+
+\vspace{0.4em}
+\footnotesize Источники: \path{artifacts/results/knowledge_graph_explainability/case_summary.csv},
+\path{artifacts/results/knowledge_graph_explainability/case_explanations.csv},
+\path{notebooks/09_knowledge_graph_explainability.ipynb}.
+\normalsize
+\end{table}

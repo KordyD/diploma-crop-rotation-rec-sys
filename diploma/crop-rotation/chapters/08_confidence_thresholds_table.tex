@@ -1,0 +1,27 @@
+\begin{center}
+\small
+\begin{longtable}{p{0.24\textwidth} p{0.34\textwidth} p{0.34\textwidth}}
+\caption{Пороги формирования confidence-групп}
+\label{tab:confidence-thresholds}\\
+\toprule
+Группа & \texttt{top1\_proba} & \texttt{margin\_top1\_top2} \\
+\midrule
+\endfirsthead
+
+\toprule
+Группа & \texttt{top1\_proba} & \texttt{margin\_top1\_top2} \\
+\midrule
+\endhead
+
+\bottomrule
+\endlastfoot
+
+\texttt{high\_confidence} & \texttt{top1\_proba >= 0.70} & \texttt{margin\_top1\_top2 >= 0.25} \\
+\texttt{medium\_confidence} & \texttt{top1\_proba >= 0.50} & \texttt{0.25 >= margin\_top1\_top2 >= 0.12} \\
+\texttt{low\_confidence} & \texttt{top1\_proba < 0.50} & \texttt{margin\_top1\_top2 <= 0.12} \\
+
+\end{longtable}
+\footnotesize
+Источник правил: \path{notebooks/07_recommendation_confidence.ipynb} (правила high/medium/low confidence).
+\normalsize
+\end{center}

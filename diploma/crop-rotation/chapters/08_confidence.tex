@@ -18,6 +18,10 @@
   \texttt{low\_confidence}.
 \end{itemize}
 
+Пороговые правила формирования confidence-групп приведены в таблице~\ref{tab:confidence-thresholds}.
+
+\input{chapters/08_confidence_thresholds_table}
+
 Тем самым итоговый вывод системы можно описать не только как ранжированный список кандидатов, но и как комбинацию двух компонентов:
 
 \begin{center}\(
@@ -56,33 +60,9 @@
   \texttt{Brier\ score}.
 \end{itemize}
 
-Калибровка анализировалась на preview-выборках по 5000 объектов. Для validation были получены значения:
+Калибровка анализировалась на preview-выборках по 5000 объектов. Сводные значения для validation и test приведены в таблице~\ref{tab:calibration-metrics}.
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{ECE\ =\ 0.02305};
-\item
-  \texttt{Brier\ =\ 0.16440};
-\item
-  \texttt{mean\ confidence\ =\ 0.75026};
-\item
-  \texttt{accuracy@1\ =\ 0.73560}.
-\end{itemize}
-
-Для test были получены значения:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{ECE\ =\ 0.01737};
-\item
-  \texttt{Brier\ =\ 0.16120};
-\item
-  \texttt{mean\ confidence\ =\ 0.75398};
-\item
-  \texttt{accuracy@1\ =\ 0.74800}.
-\end{itemize}
+\input{chapters/08_calibration_metrics_table}
 
 Калибровочная кривая для test preview-выборки приведена на рисунке~\ref{fig:reliability-diagram-test}. Диагональная линия соответствует идеальной калибровке, а точки показывают соотношение средней уверенности модели и фактической точности внутри интервалов вероятности.
 
