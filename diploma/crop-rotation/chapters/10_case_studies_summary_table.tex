@@ -1,0 +1,48 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Содержательная сводка case studies}
+\label{tab:case-studies-summary}
+\setlength{\tabcolsep}{1.5pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}
+                >{\raggedright\arraybackslash}p{0.11\textwidth}
+                >{\raggedright\arraybackslash}p{0.20\textwidth}
+                >{\raggedright\arraybackslash}p{0.15\textwidth}
+                >{\raggedright\arraybackslash}p{0.15\textwidth}
+                >{\raggedright\arraybackslash}p{0.19\textwidth}@{}}
+\toprule
+Case & Фактическая культура & Top-3 CatBoost & Самый поддержанный KG кандидат & Статус & Ключевой вывод \\
+\midrule
+High confidence
+  & \texttt{forage\_hay}
+  & \texttt{forage\_hay} ($p_1=0.930$), \texttt{corn}, \texttt{wheat}
+  & \texttt{forage\_hay} ($gs=0.661$)
+  & top-1 верен; target в Top-3; alignment strong
+  & модель и KG согласованы: фактическая культура совпадает с top-1 и имеет сильную графовую поддержку \\
+Medium confidence
+  & \texttt{corn}
+  & \texttt{corn} ($p_1=0.669$), \texttt{soybeans}, \texttt{forage\_hay}
+  & \texttt{soybeans} ($gs=0.508$)
+  & top-1 верен; target в Top-3; alignment weak
+  & модель выбирает правильный \texttt{corn}, но KG сильнее поддерживает \texttt{soybeans}; это пример конкурирующей альтернативы внутри shortlist \\
+Low confidence
+  & \texttt{legumes}
+  & \texttt{legumes} ($p_1=0.432$), \texttt{soybeans}, \texttt{fallow}
+  & \texttt{soybeans} ($gs=0.568$)
+  & top-1 верен; target в Top-3; alignment weak
+  & top-1 совпал с target, но модельная уверенность и graph support для него низкие; результат лучше читать как shortlist, а не как жёсткое предписание \\
+Difficult class
+  & \texttt{soybeans}
+  & \texttt{corn} ($p_1=0.689$), \texttt{cotton}, \texttt{soybeans}
+  & \texttt{soybeans} ($gs=0.386$)
+  & top-1 неверен; target в Top-3; alignment weak
+  & фактическая культура не первая, но остаётся в shortlist; KG выделяет её как более семантически поддержанную альтернативу \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.4em}
+\footnotesize $p_1$ --- вероятность top-1 кандидата CatBoost; $gs$ --- \texttt{graph\_support\_score}.
+Источники: \path{artifacts/results/knowledge_graph_explainability/case_summary.csv},
+\path{artifacts/results/knowledge_graph_explainability/case_explanations.csv}.
+\normalsize
+\end{table}

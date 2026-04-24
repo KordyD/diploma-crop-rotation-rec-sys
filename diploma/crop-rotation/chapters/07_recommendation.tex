@@ -32,73 +32,7 @@
 
 Именно такая постановка является центральной для данной работы.
 
-\subsection{Результаты CatBoost в рекомендательном режиме}
-
-Для baseline CatBoost в рекомендательной постановке были получены следующие результаты.
-
-\subsubsection{Validation}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4706}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1471}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1471}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1176}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1176}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-model
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-split
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Accuracy@1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Hit@3
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Hit@5
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-catboost\_recommendation\_baseline & validation & 0.699281 & 0.951190 & 0.990794 \\
-\end{longtable}
-}
-
-\subsubsection{Test}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.5079}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0794}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1587}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1270}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1270}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-model
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-split
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Accuracy@1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Hit@3
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Hit@5
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-catboost\_recommendation\_baseline & test & 0.699006 & 0.951236 & 0.990819 \\
-\end{longtable}
-}
-
-Полученные значения показывают, что даже если ограничиться одной рекомендацией, модель правильно определяет следующую культуру примерно в 70\% случаев. Однако более важным является то, что при переходе к shortlist-постановке покрытие резко возрастает: в Top-3 правильная культура попадает примерно в 95\% случаев, а в Top-5 --- почти в 99\% случаев.
-
-С прикладной точки зрения это означает, что модель особенно полезна именно как \textbf{shortlist-рекомендатель}. Даже в тех случаях, когда top-1 вариант не совпадает с фактической следующей культурой, правильный класс очень часто присутствует среди нескольких первых кандидатов. Тем самым рекомендательный режим оказывается более естественной формой использования системы, чем жёсткая одновариантная классификация.
-
-\subsection{Сравнение с Markov-1 baseline}
+\subsection{Сравнение CatBoost и Markov-1 в рекомендательном режиме}
 
 Для проверки того, насколько полезно использование более длинной истории и контекстных признаков, CatBoost сравнивается с Markov-1 baseline в той же рекомендательной постановке. Напомним, что Markov-1 использует только последнюю культуру в истории и оценивает переходы вида:
 
@@ -106,37 +40,13 @@ catboost\_recommendation\_baseline & test & 0.699006 & 0.951236 & 0.990819 \\
 P(\mathrm{target}\mid\mathrm{history}_3)
 \)\end{center}
 
-В рекомендательном режиме результаты Markov-1 имеют следующий вид.
+Итоговые значения для CatBoost и Markov-1 на validation и test приведены в таблице~\ref{tab:recommendation-metrics}.
 
-\subsubsection{Validation и test}
+\input{chapters/07_recommendation_metrics_table}
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.4706}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1471}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1471}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1176}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1176}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-model
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-split
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Accuracy@1
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Hit@3
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Hit@5
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-markov\_1\_recommendation\_baseline & validation & 0.541749 & 0.854177 & 0.935645 \\
-markov\_1\_recommendation\_baseline & test & 0.541804 & 0.854223 & 0.935550 \\
-\end{longtable}
-}
+Полученные значения показывают, что даже если ограничиться одной рекомендацией, CatBoost правильно определяет следующую культуру примерно в 70\% случаев. Однако более важным является то, что при переходе к shortlist-постановке покрытие резко возрастает: в Top-3 правильная культура попадает примерно в 95\% случаев, а в Top-5 --- почти в 99\% случаев.
+
+С прикладной точки зрения это означает, что модель особенно полезна именно как \textbf{shortlist-рекомендатель}. Даже в тех случаях, когда top-1 вариант не совпадает с фактической следующей культурой, правильный класс очень часто присутствует среди нескольких первых кандидатов. Тем самым рекомендательный режим оказывается более естественной формой использования системы, чем жёсткая одновариантная классификация.
 
 Сравнение с CatBoost показывает устойчивое преимущество финальной модели по всем ключевым метрикам:
 

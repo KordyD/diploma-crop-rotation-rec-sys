@@ -1,0 +1,28 @@
+\begin{center}
+\small
+\begin{longtable}{p{0.24\textwidth} p{0.17\textwidth} r r r}
+\caption{Сравнение CatBoost и Markov-1 в рекомендательной постановке}
+\label{tab:recommendation-metrics}\\
+\toprule
+Модель & Выборка & Accuracy@1 & Hit@3 & Hit@5 \\
+\midrule
+\endfirsthead
+
+\toprule
+Модель & Выборка & Accuracy@1 & Hit@3 & Hit@5 \\
+\midrule
+\endhead
+
+\bottomrule
+\endlastfoot
+
+CatBoost & validation & 0.699281 & 0.951190 & 0.990794 \\
+Markov-1 & validation & 0.557140 & 0.855302 & 0.931781 \\
+CatBoost & test & 0.699006 & 0.951236 & 0.990819 \\
+Markov-1 & test & 0.557219 & 0.855303 & 0.931717 \\
+
+\end{longtable}
+\footnotesize
+Источник значений: \path{artifacts/results/recommendation/recommendation_model_comparison_metrics.csv}.
+\normalsize
+\end{center}

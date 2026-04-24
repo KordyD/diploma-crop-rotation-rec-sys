@@ -1,0 +1,33 @@
+\begin{center}
+\small
+\begin{longtable}{p{0.25\textwidth} p{0.18\textwidth} r r r}
+\caption{Сравнение baseline-подходов и финальной CatBoost-модели}
+\label{tab:baseline-catboost-comparison}\\
+\toprule
+Модель & Выборка & Accuracy & Macro F1 & Weighted F1 \\
+\midrule
+\endfirsthead
+
+\toprule
+Модель & Выборка & Accuracy & Macro F1 & Weighted F1 \\
+\midrule
+\endhead
+
+\bottomrule
+\endlastfoot
+
+\texttt{most\_frequent} & validation & 0.305306 & 0.051977 & 0.142820 \\
+\texttt{last\_crop} & validation & 0.354267 & 0.172492 & 0.361115 \\
+\texttt{markov\_1} & validation & 0.557140 & 0.411203 & 0.539053 \\
+\texttt{catboost} & validation & 0.699281 & 0.568771 & 0.689966 \\
+
+\texttt{most\_frequent} & test & 0.305068 & 0.051946 & 0.142623 \\
+\texttt{last\_crop} & test & 0.354321 & 0.172575 & 0.361135 \\
+\texttt{markov\_1} & test & 0.557219 & 0.411371 & 0.539027 \\
+\texttt{catboost} & test & 0.699006 & 0.568485 & 0.689626 \\
+
+\end{longtable}
+\footnotesize
+Источник значений: \path{artifacts/results/classification_quality/baseline_catboost_comparison_metrics.csv}.
+\normalsize
+\end{center}

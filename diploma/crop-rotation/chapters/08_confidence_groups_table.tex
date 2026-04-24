@@ -1,0 +1,27 @@
+\begin{center}
+\small
+\begin{longtable}{p{0.32\textwidth} r r r}
+\caption{Качество рекомендаций по confidence-группам на test-выборке}
+\label{tab:confidence-groups}\\
+\toprule
+Группа & Число наблюдений & Accuracy@1 & Hit@3 \\
+\midrule
+\endfirsthead
+
+\toprule
+Группа & Число наблюдений & Accuracy@1 & Hit@3 \\
+\midrule
+\endhead
+
+\bottomrule
+\endlastfoot
+
+\texttt{high\_confidence} & 3 042 231 & 0.84147 & 0.97713 \\
+\texttt{medium\_confidence} & 1 691 260 & 0.60931 & 0.94252 \\
+\texttt{low\_confidence} & 1 043 523 & 0.42902 & 0.88987 \\
+
+\end{longtable}
+\footnotesize
+Источник значений: \path{artifacts/results/recommendation/confidence_summary_baseline.csv}.
+\normalsize
+\end{center}

@@ -1,0 +1,55 @@
+\begin{center}
+\small
+\begin{longtable}{p{0.24\textwidth} p{0.23\textwidth} p{0.43\textwidth}}
+\caption{Признаки финальной baseline-модели CatBoost}
+\label{tab:final-model-features}\\
+\toprule
+Признак & Тип & Краткий смысл \\
+\midrule
+\endfirsthead
+
+\toprule
+Признак & Тип & Краткий смысл \\
+\midrule
+\endhead
+
+\bottomrule
+\endlastfoot
+
+\texttt{history\_1} &
+Категориальный &
+Культура в первом году исторического окна поля \\
+
+\texttt{history\_2} &
+Категориальный &
+Культура во втором году исторического окна поля \\
+
+\texttt{history\_3} &
+Категориальный &
+Культура в третьем, ближайшем к целевому году исторического окна \\
+
+\texttt{STATEFIPS} &
+Категориальный &
+Код штата, задающий региональный контекст наблюдения \\
+
+\texttt{CNTYFIPS} &
+Категориальный &
+Код округа, задающий более локальный региональный контекст \\
+
+\texttt{CSBACRES} &
+Числовой &
+Площадь поля по данным CSB \\
+
+\texttt{INSIDE\_X} &
+Числовой &
+Пространственная координата поля по оси X \\
+
+\texttt{INSIDE\_Y} &
+Числовой &
+Пространственная координата поля по оси Y \\
+
+\end{longtable}
+\footnotesize
+Источник состава признаков: \path{artifacts/catboost/baseline/meta.json}.
+\normalsize
+\end{center}

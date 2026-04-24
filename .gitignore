@@ -10,15 +10,10 @@ artifacts/
 __pycache__/
 *.py[cod]
 
-diploma/crop-rotation/*
-!diploma/crop-rotation/*.tex
-!diploma/crop-rotation/md
-!diploma/crop-rotation/*.pdf
-!diploma/crop-rotation/chapters/
-!diploma/crop-rotation/chapters/*.tex
-!diploma/crop-rotation/frontmatter/
-!diploma/crop-rotation/frontmatter/*.tex
-!diploma/crop-rotation/backmatter/
-!diploma/crop-rotation/backmatter/*.tex
-!diploma/crop-rotation/styles/
-!diploma/crop-rotation/styles/*.sty
+diploma/crop-rotation/*.aux
+diploma/crop-rotation/*.out
+diploma/crop-rotation/*.toc
+diploma/crop-rotation/*.fdb_latexmk
+diploma/crop-rotation/*.fls
+diploma/crop-rotation/*.log
+diploma/crop-rotation/*.synctex.gz
