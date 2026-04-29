@@ -1,0 +1,43 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{setspace}
+
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.25em}
+\renewcommand{\arraystretch}{1.2}
+\pagestyle{empty}
+
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\Centering\arraybackslash}p{#1}}
+
+\newcommand{\UniversityName}{Санкт-Петербургский государственный университет}
+\newcommand{\DirectionName}{02.04.02 «Фундаментальная информатика и информационные технологии»}
+\newcommand{\ProgramName}{Технологии искусственного интеллекта и Big Data}
+\newcommand{\StudentName}{Корельский Дмитрий Сергеевич}
+\newcommand{\StudentGroup}{\underline{\hspace{2.8cm}}}
+\newcommand{\PracticeStart}{01.04.2026}
+\newcommand{\PracticeEnd}{15.04.2026}
+\newcommand{\PracticePlace}{СПбГУ, факультет прикладной математики -- процессов управления, ОП «Технологии искусственного интеллекта и Big Data»}
+\newcommand{\SupervisorName}{Митрофанов Евгений Павлович}
+\newcommand{\SupervisorRole}{научный руководитель, СПбГУ}
+\newcommand{\PracticeTheme}{Разработка объяснимого прототипа рекомендательной системы выбора следующей культуры в севообороте}
+
+\begin{document}
+
+\input{appendix4_titlepage}
+\clearpage
+\input{appendix1_assignment}
+\clearpage
+\input{appendix2_diary}
+
+\end{document}

@@ -1,0 +1,92 @@
+\begin{center}
+{\large ПРИЛОЖЕНИЕ 1}\\[0.5em]
+Бланк индивидуального задания на практику студента
+\end{center}
+
+\vspace{1em}
+
+\begin{center}
+\textbf{\MakeUppercase{\UniversityName}}
+\end{center}
+
+\noindent\textbf{Направление:} \DirectionName\\
+\textbf{ОП:} \ProgramName
+
+\vspace{1.5em}
+
+\begin{center}
+{\Large\bfseries ИНДИВИДУАЛЬНОЕ ЗАДАНИЕ}\\[0.3em]
+на научно-исследовательскую практику
+\end{center}
+
+\vspace{1em}
+
+\noindent\textbf{Студент:} \StudentName \hfill \textbf{номер группы:} \StudentGroup
+
+\noindent\textbf{Тема задания:} \PracticeTheme
+
+\noindent\textbf{Сроки прохождения практики:} \PracticeStart{} -- \PracticeEnd
+
+\noindent\textbf{Место прохождения практики:} \PracticePlace
+
+\vspace{0.75em}
+
+\noindent\textbf{1. Виды работ и требования к их выполнению:}
+\begin{enumerate}
+\item Провести анализ предметной области и сформулировать задачу как explainable decision-support prototype для рекомендации следующей культуры по истории поля и региональному контексту.
+\item Подготовить и проверить воспроизводимый notebook-first pipeline: этапы очистки данных, построения window-датасета и фиксированного split по \texttt{CSBID} с \texttt{random\_state=42}.
+\item Исследовать baseline-подходы и обучить финальную CatBoost-модель \texttt{baseline}; сохранить артефакты модели и метаданные в согласованных путях \texttt{artifacts/}.
+\item Перейти от top-1 классификации к Top-k recommendation workflow, оценить \texttt{Accuracy@1}, \texttt{Hit@3}, \texttt{Hit@5}, confidence buckets и калибровку вероятностей.
+\item Реализовать и оценить explainability-слой на основе knowledge graph и правил поддержки/предупреждения без подмены финальной предиктивной модели.
+\item Подготовить spatial demo и итоговые материалы практики: отчет, заполненный дневник, таблицы и графики с опорой на артефакты дипломной работы.
+\end{enumerate}
+
+\noindent\textbf{2. Виды отчетных материалов и требования к их оформлению:}
+\begin{enumerate}
+\item Отчет по практике с описанием цели, постановки задачи, этапов работы, используемых данных, модели \texttt{baseline}, recommendation/confidence/explainability результатов и выводов.
+\item Дневник практики с фиксацией ежедневных этапов работ, возникающих вопросов и полученных результатов.
+\item Подборка подтверждающих материалов: ноутбуки этапов 01--10, артефакты в \texttt{artifacts/}, итоговые таблицы и рисунки из диплома.
+\item При описании результатов использовать только артефактно подтвержденные значения; финальную систему трактовать как прототип поддержки принятия решений, а не как агрономический оптимизатор.
+\end{enumerate}
+
+\vspace{1.5em}
+
+\begin{center}
+\textbf{3. ПЛАН-ГРАФИК}
+\end{center}
+
+\small
+\begin{tabularx}{\textwidth}{C{0.8cm}|L{4.2cm}|C{2.2cm}|L{4.5cm}|L{3.1cm}}
+\textbf{№ этапа} & \textbf{Наименование этапа} & \textbf{Срок завершения этапа} & \textbf{Виды работ} & \textbf{Форма отчетности} \\
+\hline
+1 & Постановка задачи и обзор материалов & 03.04.2026 & Анализ темы диплома, структуры репозитория и постановки recommendation-задачи & Рабочие заметки, уточненная тема \\
+\hline
+2 & Подготовка данных и формирование признаков & 06.04.2026 & Проверка этапов 01--02: очистка данных, window-датасет, feature table & Описание датасета, файлы \texttt{01\_meta.json}, \texttt{02\_meta.json} \\
+\hline
+3 & Базовые модели и frozen split & 08.04.2026 & Анализ baselines, split по \texttt{CSBID}, контроль контрактов классов & Таблицы baseline-метрик, \texttt{baseline\_meta.json} \\
+\hline
+4 & Финальная baseline-модель & 10.04.2026 & Анализ CatBoost \texttt{baseline}, feature contract и quality metrics & \texttt{model.cbm}, \texttt{meta.json}, quality plots \\
+\hline
+5 & Recommendation и explainability слои & 13.04.2026 & Top-k метрики, confidence/calibration, сравнение с Markov, knowledge graph & CSV, PNG и JSON этапов 07--09 \\
+\hline
+6 & Spatial demo и оформление результатов & 15.04.2026 & Подготовка spatial demo, итогового отчета и приложений практики & Заполненные приложения, итоговый PDF, ссылки на артефакты \\
+\end{tabularx}
+\normalsize
+
+\vspace{1.5em}
+
+\noindent Задание утверждено на заседании кафедры \underline{\hspace{7cm}}
+
+\noindent (протокол от «\underline{\hspace{0.8cm}}» \underline{\hspace{3cm}} 20\underline{\hspace{0.5cm}} г. №\underline{\hspace{1cm}}).
+
+\vspace{1em}
+
+\noindent Руководитель практики \hfill \underline{\hspace{3cm}} \hfill \SupervisorName
+
+\vspace{1.5em}
+
+\noindent Задание принял к исполнению «\underline{\hspace{0.8cm}}» \underline{\hspace{3cm}} 20\underline{\hspace{0.5cm}} г.
+
+\vspace{1.5em}
+
+\noindent\hfill \underline{\hspace{4cm}} \hfill \StudentName

@@ -1,0 +1,59 @@
+\begin{center}
+{\large ПРИЛОЖЕНИЕ 2}\\[0.5em]
+Шаблон дневника практики
+\end{center}
+
+\vspace{1em}
+
+\begin{center}
+\textbf{\MakeUppercase{\UniversityName}}
+\end{center}
+
+\noindent\textbf{Направление:} \DirectionName\\
+\textbf{ОП:} \ProgramName
+
+\vspace{1em}
+
+\begin{center}
+{\Large\bfseries ДНЕВНИК НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ ПРАКТИКИ}
+\end{center}
+
+\noindent за период с \PracticeStart{} по \PracticeEnd
+
+\noindent\textbf{Студент:} \StudentName \hfill \textbf{номер группы:} \StudentGroup
+
+\noindent\textbf{Руководитель практики:} \SupervisorName, \SupervisorRole
+
+\vspace{1em}
+
+\scriptsize
+\begin{longtable}{L{1.55cm}|L{2.55cm}|L{4.6cm}|L{2.25cm}|L{3.0cm}|L{1.55cm}}
+\textbf{Дата} & \textbf{Наименование структурного подразделения} & \textbf{Краткое содержание работы} & \textbf{Возникшие вопросы} & \textbf{Достигнутые результаты} & \textbf{Отметка о выполнении} \\
+\hline
+01.04.2026 & СПбГУ, ПМ-ПУ & Уточнена тема НИР и прикладная постановка: recommendation system для next-crop выбора, explainable prototype, top-k workflow. & Как корректно ограничить claims рамкой decision support. & Зафиксирована финальная framing без завышения выводов. & Выполнено \\
+\hline
+02.04.2026 & СПбГУ, ПМ-ПУ & Проверены результаты этапа 01: очистка и агрегация данных USDA NASS CSB/CDL, подготовленный датасет на 8\,110\,870 строк. & Какие классы исключать как нерелевантные. & Подтвержден артефакт \texttt{01\_df\_prepared\_filtered.pkl}. & Выполнено \\
+\hline
+03.04.2026 & СПбГУ, ПМ-ПУ & Проанализирован этап 02: формирование window-датасета, исторических признаков и target-таблицы. & Как сохранить совместимость признаков для downstream notebooks. & Подтвержден window-набор на 38\,511\,210 строк и 11 столбцов. & Выполнено \\
+\hline
+06.04.2026 & СПбГУ, ПМ-ПУ & Проверен frozen split по \texttt{CSBID} и baseline-эксперименты этапа 03. & Как избежать утечки между train/val/test. & Подтвержден group-aware split и файл \texttt{baseline\_meta.json}. & Выполнено \\
+\hline
+07.04.2026 & СПбГУ, ПМ-ПУ & Изучена финальная baseline CatBoost-модель и ее feature contract: \texttt{history\_1..3}, \texttt{STATEFIPS}, \texttt{CNTYFIPS}, \texttt{CSBACRES}, \texttt{INSIDE\_X}, \texttt{INSIDE\_Y}. & Достаточен ли baseline как финальная модель диплома. & Подтвержден статус \texttt{baseline} как final model в \texttt{model\_registry.json}. & Выполнено \\
+\hline
+08.04.2026 & СПбГУ, ПМ-ПУ & Проанализированы recommendation-метрики CatBoost в Top-k режиме. & Как интерпретировать качество за пределами top-1. & Для test подтверждены \texttt{Acc@1=0.699}, \texttt{Hit@3=0.951}, \texttt{Hit@5=0.991}. & Выполнено \\
+\hline
+09.04.2026 & СПбГУ, ПМ-ПУ & Изучены confidence buckets и калибровка вероятностей на этапе 07. & Насколько вероятности пригодны как confidence-сигнал. & Подтверждены ECE test \texttt{0.017} и high-confidence \texttt{Acc@1=0.841}. & Выполнено \\
+\hline
+10.04.2026 & СПбГУ, ПМ-ПУ & Проведено сравнение с Markov-1 recommendation baseline и анализ практической полезности shortlist-подхода. & Насколько простой последовательностный baseline конкурентоспособен. & Зафиксировано преимущество CatBoost над Markov-1 по всем Top-k метрикам. & Выполнено \\
+\hline
+13.04.2026 & СПбГУ, ПМ-ПУ & Проанализирован explainability-слой: knowledge graph, правила поддержки/предупреждения, case studies. & Как не смешивать интерпретацию и предсказание. & Подтверждены 2\,827 узлов, 18\,154 ребра и 5 правил в KG-слое. & Выполнено \\
+\hline
+14.04.2026 & СПбГУ, ПМ-ПУ & Рассмотрен spatial demo: карта с полями, рекомендациями и explainability-контекстом. & Как показать результаты на карте без переобучения модели. & Подтверждены HTML-артефакты spatial demo и bbox-демо. & Выполнено \\
+\hline
+15.04.2026 & СПбГУ, ПМ-ПУ & Подготовлены материалы отчета по практике и приложений на основе фактических артефактов дипломной работы. & Какие поля требуют ручного уточнения перед сдачей. & Сформирован комплект приложений 1, 2 и 4 в \LaTeX{}-виде. & Выполнено \\
+\end{longtable}
+\normalsize
+
+\vspace{0.5em}
+
+\noindent * Подпись руководителя практики от организации
