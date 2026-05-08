@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Признаки финальной baseline-модели CatBoost}
+\label{tab:practice-final-features}
+\begin{tabularx}{0.96\textwidth}{L{0.22\textwidth} L{0.18\textwidth} X}
+\toprule
+Признак & Тип & Смысл \\
+\midrule
+\texttt{history\_1} & категориальный & Культура в первом году исторического окна поля \\
+\texttt{history\_2} & категориальный & Культура во втором году исторического окна поля \\
+\texttt{history\_3} & категориальный & Культура в ближайшем к целевому году исторического окна \\
+\texttt{STATEFIPS} & категориальный & Код штата как общий региональный контекст \\
+\texttt{CNTYFIPS} & категориальный & Код округа как более локальный региональный контекст \\
+\texttt{CSBACRES} & числовой & Площадь поля по данным CSB \\
+\texttt{INSIDE\_X} & числовой & Пространственная координата поля по оси X \\
+\texttt{INSIDE\_Y} & числовой & Пространственная координата поля по оси Y \\
+\bottomrule
+\end{tabularx}
+\end{table}
