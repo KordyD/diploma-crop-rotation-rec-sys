@@ -18,15 +18,21 @@
 
 Baseline CatBoost &
 Компактная модель на признаках истории, региона, площади и координат поля &
-\textbf{Выбран.} Зафиксирован как активная финальная модель в \path{artifacts/model_registry.json}; на test: Accuracy = 0.699006, Macro F1 = 0.568485, Weighted F1 = 0.689626 \\
+\textbf{Выбран.} Зафиксирован как активная финальная модель в \path{artifacts/model_registry.json}; на test: Accuracy =
+0.699006, Macro F1 = 0.568485, Weighted F1 = 0.689626 \\
 
 CatBoost + extra features &
-Расширение признакового пространства derived-признаками истории: число уникальных культур, наличие \texttt{fallow} и \texttt{legumes}, признаки повторяемости &
-\textbf{Не выбран.} На test: Accuracy = 0.699235, Macro F1 = 0.569473, Weighted F1 = 0.689991. Несмотря на близкое качество, ветка сохранена как экспериментальная \texttt{improved} и не заменяет baseline в финальном проектном контракте \\
+Расширение признакового пространства derived-признаками истории: число уникальных культур, наличие \texttt{fallow} и
+\texttt{legumes}, признаки повторяемости &
+\textbf{Не выбран.} На test: Accuracy = 0.699235, Macro F1 = 0.569473, Weighted F1 = 0.689991. Несмотря на близкое
+качество, ветка сохранена как экспериментальная \texttt{improved} и не заменяет baseline в финальном проектном контракте
+\\
 
 CatBoost + transition graph &
-Гибридное ранжирование по формуле $\mathrm{score}=\alpha p_{\mathrm{catboost}}+\beta p_{\mathrm{graph}}$ с лучшей конфигурацией $\alpha=0.9$, $\beta=0.1$ &
-\textbf{Не выбран.} Лучший hybrid-вариант на test немного уступил чистому CatBoost: Accuracy = 0.698714, Macro F1 = 0.564387, Weighted F1 = 0.688729; graph-сигнал оставлен как explainability layer \\
+Гибридное ранжирование по формуле $\mathrm{score}=\alpha p_{\mathrm{catboost}}+\beta p_{\mathrm{graph}}$ с лучшей
+конфигурацией $\alpha=0.9$, $\beta=0.1$ &
+\textbf{Не выбран.} Лучший hybrid-вариант на test немного уступил чистому CatBoost: Accuracy = 0.698714, Macro F1 =
+0.564387, Weighted F1 = 0.688729; graph-сигнал оставлен как explainability layer \\
 
 \end{longtable}
 \footnotesize

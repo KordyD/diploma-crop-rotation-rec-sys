@@ -1,10 +1,16 @@
-\documentclass[a4paper,article,14pt]{extarticle}
+\documentclass[a4paper,14pt]{extarticle}
 
-\usepackage{styles/diploma_crop_rotation}
+\makeatletter
+\def\input@path{{styles/}}
+\makeatother
+\usepackage{diploma_crop_rotation}
 
 \begin{document}
 
+\hypersetup{pageanchor=false}
 \input{frontmatter/titlepage}
+\clearpage
+\hypersetup{pageanchor=true}
 
 \tableofcontents
 \pagebreak
@@ -21,6 +27,7 @@
 \input{chapters/10_literature_augmented_graph}
 \input{chapters/10_spatial_demo}
 \input{chapters/11_future_work}
+\newpage
 \input{chapters/12_conclusion}
 
 \input{backmatter/references}

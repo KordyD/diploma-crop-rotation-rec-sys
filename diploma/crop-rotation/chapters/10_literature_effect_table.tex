@@ -1,0 +1,54 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Изменение graph support после добавления литературных правил}
+\label{tab:literature-effect}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.13\textwidth}
+                >{\raggedright\arraybackslash}p{0.12\textwidth}
+                r
+                r
+                r
+                >{\raggedright\arraybackslash}p{0.18\textwidth}
+                >{\raggedright\arraybackslash}p{0.14\textwidth}@{}}
+\toprule
+Case & Top-1 модели & \makecell[r]{Base\\$gs$} & \makecell[r]{Lit\\$gs$} & \makecell[r]{$\Delta gs$\\top-1}
+    & \makecell[l]{Лучший literature-aware\\кандидат} & Alignment \\
+\midrule
+High confidence
+  & \texttt{forage\_hay}
+  & 0.661
+  & 0.591
+  & $-0.070$
+  & \texttt{forage\_hay} (0.591)
+  & strong $\rightarrow$ strong \\
+Medium confidence
+  & \texttt{corn}
+  & 0.376
+  & 0.236
+  & $-0.140$
+  & \texttt{soybeans} (0.598)
+  & weak $\rightarrow$ weak \\
+Low confidence
+  & \texttt{legumes}
+  & 0.011
+  & 0.071
+  & $+0.060$
+  & \texttt{soybeans} (0.698)
+  & weak $\rightarrow$ weak \\
+Difficult class
+  & \texttt{corn}
+  & 0.220
+  & 0.220
+  & $\phantom{+}0.000$
+  & \texttt{soybeans} (0.386)
+  & weak $\rightarrow$ weak \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.4em}
+\footnotesize $gs$ --- \texttt{graph\_support\_score}; $\Delta gs$ --- разность между literature-aware и базовым score
+для top-1 кандидата модели.
+Источник значений: \path{artifacts/results/literature_graph/literature_augmented_case_summary.csv}.
+\normalsize
+\end{table}
