@@ -16,40 +16,35 @@
 \bottomrule
 \endlastfoot
 
-Prepared dataset &
+Очищенный набор данных &
 8 110 870 &
 \texttt{01\_meta.json} &
-Очищенная таблица после первичной подготовки данных \\
+Таблица после первичной подготовки и очистки данных \\
 
-Window dataset &
+Оконная выборка &
 40 554 350 &
 \texttt{02\_meta.json} &
-Оконная выборка формата \texttt{history -> target} \\
+Выборка формата «история культур \(\rightarrow\) целевая культура» \\
 
-Filtered dataset &
+Выборка после фильтрации &
 38 511 210 &
 \texttt{02\_meta.json} &
-Оконная выборка после фильтрации редких target-классов \\
+Оконная выборка после исключения редких целевых классов \\
 
-Train &
+Обучающая выборка &
 26 957 630 &
 \texttt{run\_meta.json} &
-Обучающая часть фиксированного group-aware split по \texttt{CSBID} \\
+Часть фиксированного разбиения с учётом группировки по \texttt{CSBID} \\
 
-Validation &
+Валидационная выборка &
 5 776 566 &
 \texttt{run\_meta.json} &
-Валидационная часть фиксированного split \\
+Часть фиксированного разбиения для подбора и промежуточной оценки \\
 
-Test &
+Тестовая выборка &
 5 777 014 &
 \texttt{run\_meta.json} &
-Тестовая часть фиксированного split \\
+Часть фиксированного разбиения для итоговой оценки \\
 
 \end{longtable}
-\footnotesize
-Источники значений: \path{artifacts/data/01_meta.json},
-\path{artifacts/data/02_meta.json},
-\path{artifacts/results/knowledge_graph_explainability/run_meta.json}.
-\normalsize
 \end{center}

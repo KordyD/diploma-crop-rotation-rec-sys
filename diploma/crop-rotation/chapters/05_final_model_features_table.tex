@@ -1,7 +1,7 @@
 \begin{center}
 \small
 \begin{longtable}{p{0.24\textwidth} p{0.23\textwidth} p{0.43\textwidth}}
-\caption{Признаки финальной baseline-модели CatBoost}
+\caption{Итоговое признаковое представление}
 \label{tab:final-model-features}\\
 \toprule
 Признак & Тип & Краткий смысл \\
@@ -18,15 +18,15 @@
 
 \texttt{history\_1} &
 Категориальный &
-Культура в первом году исторического окна поля \\
+Культура на поле в году \(t-3\) \\
 
 \texttt{history\_2} &
 Категориальный &
-Культура во втором году исторического окна поля \\
+Культура на поле в году \(t-2\) \\
 
 \texttt{history\_3} &
 Категориальный &
-Культура в третьем, ближайшем к целевому году исторического окна \\
+Культура на поле в году \(t-1\), ближайшем к целевому году \\
 
 \texttt{STATEFIPS} &
 Категориальный &
@@ -49,7 +49,4 @@
 Пространственная координата поля по оси Y \\
 
 \end{longtable}
-\footnotesize
-Источник состава признаков: \path{artifacts/catboost/baseline/meta.json}.
-\normalsize
 \end{center}
