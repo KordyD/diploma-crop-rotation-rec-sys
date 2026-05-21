@@ -1,7 +1,7 @@
 \begin{center}
 \scriptsize
 \begin{longtable}{p{0.24\textwidth} p{0.31\textwidth} r r r}
-\caption{Компактное сравнение CatBoost-экспериментов на test-выборке}
+\caption{Сравнение промежуточных экспериментальных конфигураций на тестовой выборке}
 \label{tab:intermediate-experiments-metrics}\\
 \toprule
 Эксперимент & Что проверялось & Accuracy & Macro F1 & Weighted F1 \\
@@ -26,14 +26,10 @@ CatBoost + extra features &
 0.699235 & 0.569473 & 0.689991 \\
 
 CatBoost + transition graph &
-Гибридное ранжирование по формуле $\mathrm{score}=\alpha p_{\mathrm{catboost}}+\beta p_{\mathrm{graph}}$ с лучшей
-конфигурацией $\alpha=0.9$, $\beta=0.1$ &
+Гибридное ранжирование по формуле
+\(\mathrm{score}(c)=\alpha p_{\mathrm{CatBoost}}(c\mid x)+\beta p_{\mathrm{graph}}(c\mid c_{t-1})\)
+при лучшей конфигурации \(\alpha=0.9\), \(\beta=0.1\) &
 0.698714 & 0.564387 & 0.688729 \\
 
 \end{longtable}
-\footnotesize
-Источники: \path{artifacts/results/classification_quality/catboost_baseline_metrics.csv},
-\path{artifacts/catboost/improved/meta.json},
-\path{artifacts/results/graph_hybrid/hybrid_metrics.csv}.
-\normalsize
 \end{center}
