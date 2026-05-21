@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Поклассовое качество рекомендаций основной модели CatBoost на тестовой выборке}
+\label{tab:per-class-recommendation-metrics}
+\begin{tabular}{lrrp{0.40\textwidth}}
+\toprule
+Класс & \texttt{recall@1} & \texttt{recall@3} & Комментарий \\
+\midrule
+\texttt{corn} & 0.7187 & 0.9841 & Устойчивый массовый класс \\
+\texttt{cotton} & 0.7659 & 0.9665 & Хорошо выраженный региональный паттерн \\
+\texttt{fallow} & 0.4068 & 0.8044 & Заметный выигрыш при переходе к списку кандидатов \\
+\texttt{forage\_hay} & 0.8505 & 0.9337 & Высокое качество первой рекомендации \\
+\texttt{legumes} & 0.1384 & 0.7331 & Сложный класс для первой рекомендации \\
+\texttt{other\_cereals} & 0.2401 & 0.6394 & Более разнородная группа культур \\
+\texttt{sorghum} & 0.3061 & 0.8448 & Заметный выигрыш при переходе к списку кандидатов \\
+\texttt{soybeans} & 0.7605 & 0.9928 & Устойчивый массовый класс \\
+\texttt{wheat} & 0.7304 & 0.9558 & Один из наиболее устойчивых классов \\
+\bottomrule
+\end{tabular}
+
+\end{table}
