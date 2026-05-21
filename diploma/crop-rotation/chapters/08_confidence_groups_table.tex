@@ -1,15 +1,15 @@
 \begin{center}
 \small
 \begin{longtable}{p{0.32\textwidth} r r r}
-\caption{Качество рекомендаций по confidence-группам на test-выборке}
+\caption{Качество рекомендаций по группам уверенности на тестовой выборке}
 \label{tab:confidence-groups}\\
 \toprule
-Группа & Число наблюдений & Accuracy@1 & Hit@3 \\
+Группа & Число наблюдений & \texttt{Accuracy@1} & \texttt{Hit@3} \\
 \midrule
 \endfirsthead
 
 \toprule
-Группа & Число наблюдений & Accuracy@1 & Hit@3 \\
+Группа & Число наблюдений & \texttt{Accuracy@1} & \texttt{Hit@3} \\
 \midrule
 \endhead
 
@@ -21,7 +21,4 @@
 \texttt{low\_confidence} & 1 043 523 & 0.42902 & 0.88987 \\
 
 \end{longtable}
-\footnotesize
-Источник значений: \path{artifacts/results/recommendation/confidence_summary_baseline.csv}.
-\normalsize
 \end{center}

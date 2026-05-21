@@ -1,27 +1,36 @@
 \begin{center}
 \small
-\begin{longtable}{p{0.24\textwidth} p{0.34\textwidth} p{0.34\textwidth}}
-\caption{Пороги формирования confidence-групп}
+\begin{longtable}{p{0.25\textwidth} p{0.22\textwidth} p{0.43\textwidth}}
+\caption{Пороги формирования групп уверенности}
 \label{tab:confidence-thresholds}\\
 \toprule
-Группа & \texttt{top1\_proba} & \texttt{margin\_top1\_top2} \\
+Техническое обозначение & Группа & Условие формирования \\
 \midrule
 \endfirsthead
 
 \toprule
-Группа & \texttt{top1\_proba} & \texttt{margin\_top1\_top2} \\
+Техническое обозначение & Группа & Условие формирования \\
 \midrule
 \endhead
 
 \bottomrule
 \endlastfoot
 
-\texttt{high\_confidence} & \texttt{top1\_proba >= 0.70} & \texttt{margin\_top1\_top2 >= 0.25} \\
-\texttt{medium\_confidence} & \texttt{top1\_proba >= 0.50} & \texttt{0.25 >= margin\_top1\_top2 >= 0.12} \\
-\texttt{low\_confidence} & \texttt{top1\_proba < 0.50} & \texttt{margin\_top1\_top2 <= 0.12} \\
+\texttt{high\_confidence} &
+Высокая уверенность &
+\(p_1 \ge 0.70\) и \(\Delta_{1,2} \ge 0.25\) \\
+
+\texttt{medium\_confidence} &
+Средняя уверенность &
+условие высокой уверенности не выполнено, но \(p_1 \ge 0.50\) и \(\Delta_{1,2} \ge 0.12\) \\
+
+\texttt{low\_confidence} &
+Низкая уверенность &
+иначе \\
 
 \end{longtable}
 \footnotesize
-Источник правил: \path{notebooks/07_recommendation_confidence.ipynb} (правила high/medium/low confidence).
+Здесь \(p_1\) обозначает вероятность первой рекомендации, а
+\(\Delta_{1,2}=p_1-p_2\) --- разницу между вероятностями первой и второй рекомендаций.
 \normalsize
 \end{center}
