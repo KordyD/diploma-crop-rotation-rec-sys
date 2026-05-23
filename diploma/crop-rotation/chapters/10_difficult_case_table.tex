@@ -1,7 +1,7 @@
 \begin{table}[H]
 \centering
 \small
-\caption{Difficult-case: краткая карточка наблюдения}
+\caption{Сложный пример: краткая карточка наблюдения}
 \label{tab:difficult-case-card}
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.12}
@@ -13,18 +13,18 @@
 \hline
 \texttt{true\_target} & \texttt{soybeans} \\
 \hline
-Top-1 модели / вероятность / уверенность & \texttt{corn}, $p_1 = 0.6887$, \texttt{medium\_confidence} \\
+Первая рекомендация модели / вероятность / уверенность & \texttt{corn}, $p_1 = 0.6887$, средняя уверенность \\
 \hline
-\texttt{true\_target} в shortlist & Да \\
+\texttt{true\_target} в ранжированном списке & Да \\
 \hline
-Shortlist (Top-3) & \texttt{corn} (0.6887), \texttt{cotton} (0.2118), \texttt{soybeans} (0.0835) \\
+Список из трех кандидатов & \texttt{corn} (0.6887), \texttt{cotton} (0.2118), \texttt{soybeans} (0.0835) \\
 \hline
-Лучший кандидат по graph support & \texttt{soybeans} \\
+Кандидат с наибольшей графовой поддержкой & \texttt{soybeans} \\
 \hline
-Graph support (best candidate) & 0.3863 \\
+Графовая поддержка лучшего кандидата & 0.3863 \\
 \hline
 Интерпретация
-    & Сложный кейс: top-1 ошибается, но \texttt{true\_target} присутствует в shortlist и сильнее поддержан графом. \\
+    & Сложный пример: первая рекомендация ошибочна, но \texttt{true\_target} присутствует в ранжированном списке и сильнее поддержан графом. \\
 \hline
 \end{tabular}
 

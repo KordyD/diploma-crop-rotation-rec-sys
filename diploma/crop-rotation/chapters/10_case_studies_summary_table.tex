@@ -1,7 +1,7 @@
 \begin{table}[H]
 \centering
 \scriptsize
-\caption{Содержательная сводка case studies}
+\caption{Содержательная сводка отдельных примеров}
 \label{tab:case-studies-summary}
 \setlength{\tabcolsep}{1.5pt}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}
@@ -11,41 +11,39 @@
                 >{\raggedright\arraybackslash}p{0.15\textwidth}
                 >{\raggedright\arraybackslash}p{0.19\textwidth}@{}}
 \toprule
-Case & Фактическая культура & Top-3 CatBoost & Самый поддержанный KG кандидат & Статус & Ключевой вывод \\
+Пример & Фактическая культура & Три первых кандидата CatBoost & \makecell[l]{Кандидат с наибольшей\\графовой поддержкой} & Статус & Ключевой вывод \\
 \midrule
-High confidence
+Высокая уверенность
   & \texttt{forage\_hay}
   & \texttt{forage\_hay} ($p_1=0.930$), \texttt{corn}, \texttt{wheat}
   & \texttt{forage\_hay} ($gs=0.661$)
-  & top-1 верен; target в Top-3; alignment strong
-  & модель и KG согласованы: фактическая культура совпадает с top-1 и имеет сильную графовую поддержку \\
-Medium confidence
+  & первая рекомендация верна; целевая культура в первых трёх позициях; сильная согласованность
+  & модель и граф знаний согласованы: фактическая культура совпадает с первой рекомендацией и имеет сильную графовую поддержку \\
+Средняя уверенность
   & \texttt{corn}
   & \texttt{corn} ($p_1=0.669$), \texttt{soybeans}, \texttt{forage\_hay}
   & \texttt{soybeans} ($gs=0.508$)
-  & top-1 верен; target в Top-3; alignment weak
-  & модель выбирает правильный \texttt{corn}, но KG сильнее поддерживает \texttt{soybeans}; это пример конкурирующей
-  альтернативы внутри shortlist \\
-Low confidence
+  & первая рекомендация верна; целевая культура в первых трёх позициях; слабая согласованность
+  & модель выбирает правильный \texttt{corn}, но граф знаний сильнее поддерживает \texttt{soybeans}; это пример конкурирующей
+  альтернативы внутри ранжированного списка \\
+Низкая уверенность
   & \texttt{legumes}
   & \texttt{legumes} ($p_1=0.432$), \texttt{soybeans}, \texttt{fallow}
   & \texttt{soybeans} ($gs=0.568$)
-  & top-1 верен; target в Top-3; alignment weak
-  & top-1 совпал с target, но модельная уверенность и graph support для него низкие; результат лучше читать как
-  shortlist, а не как жёсткое предписание \\
-Difficult class
+  & первая рекомендация верна; целевая культура в первых трёх позициях; слабая согласованность
+  & первая рекомендация совпала с целевой культурой, но модельная уверенность и графовая поддержка для нее низкие; результат лучше
+  читать как ранжированный список кандидатов, а не как жесткое предписание \\
+Сложный класс
   & \texttt{soybeans}
   & \texttt{corn} ($p_1=0.689$), \texttt{cotton}, \texttt{soybeans}
   & \texttt{soybeans} ($gs=0.386$)
-  & top-1 неверен; target в Top-3; alignment weak
-  & фактическая культура не первая, но остаётся в shortlist; KG выделяет её как более семантически поддержанную
+  & первая рекомендация неверна; целевая культура в первых трёх позициях; слабая согласованность
+  & фактическая культура не первая, но остаётся в ранжированном списке; граф знаний выделяет её как более семантически поддержанную
   альтернативу \\
 \bottomrule
 \end{tabular}
 
 \vspace{0.4em}
-\footnotesize $p_1$ --- вероятность top-1 кандидата CatBoost; $gs$ --- \texttt{graph\_support\_score}.
-Источники: \path{artifacts/results/knowledge_graph_explainability/case_summary.csv},
-\path{artifacts/results/knowledge_graph_explainability/case_explanations.csv}.
+\footnotesize $p_1$ --- вероятность первой рекомендации CatBoost; $gs$ --- \texttt{graph\_support\_score}.
 \normalsize
 \end{table}

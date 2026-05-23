@@ -1,0 +1,53 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Изменение графовой поддержки после добавления литературных правил}
+\label{tab:literature-effect}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.13\textwidth}
+                >{\raggedright\arraybackslash}p{0.12\textwidth}
+                r
+                r
+                r
+                >{\raggedright\arraybackslash}p{0.18\textwidth}
+                >{\raggedright\arraybackslash}p{0.14\textwidth}@{}}
+\toprule
+Пример & \makecell[l]{Первая рекомендация\\модели} & \makecell[r]{Базовый\\$gs$} & \makecell[r]{$gs$ с\\литературными\\правилами} & \makecell[r]{$\Delta gs$\\первой\\рекомендации}
+    & \makecell[l]{Кандидат с\\наибольшим $gs$} & Согласованность \\
+\midrule
+Высокая уверенность
+  & \texttt{forage\_hay}
+  & 0.661
+  & 0.591
+  & $-0.070$
+  & \texttt{forage\_hay} (0.591)
+  & сильная $\rightarrow$ сильная \\
+Средняя уверенность
+  & \texttt{corn}
+  & 0.376
+  & 0.236
+  & $-0.140$
+  & \texttt{soybeans} (0.598)
+  & слабая $\rightarrow$ слабая \\
+Низкая уверенность
+  & \texttt{legumes}
+  & 0.011
+  & 0.071
+  & $+0.060$
+  & \texttt{soybeans} (0.698)
+  & слабая $\rightarrow$ слабая \\
+Сложный класс
+  & \texttt{corn}
+  & 0.220
+  & 0.220
+  & $\phantom{+}0.000$
+  & \texttt{soybeans} (0.386)
+  & слабая $\rightarrow$ слабая \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.4em}
+\footnotesize $gs$ --- \texttt{graph\_support\_score}; $\Delta gs$ --- разность между значением с учетом литературных правил
+и базовым значением для первой рекомендации модели.
+\normalsize
+\end{table}
