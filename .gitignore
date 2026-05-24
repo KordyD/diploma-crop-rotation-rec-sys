@@ -17,6 +17,8 @@ diploma/crop-rotation/*.fdb_latexmk
 diploma/crop-rotation/*.fls
 diploma/crop-rotation/*.log
 diploma/crop-rotation/*.synctex.gz
+diploma/crop-rotation/*.bbl
+diploma/crop-rotation/*.blg
 report/***/*.aux
 report/***/*.out
 report/***/*.toc
