@@ -18,36 +18,37 @@
 Высокая уверенность
   & \texttt{forage\_hay}
   & 0.661
-  & 0.591
-  & $-0.070$
-  & \texttt{forage\_hay} (0.591)
+  & 0.601
+  & $-0.060$
+  & \texttt{forage\_hay} (0.601)
   & сильная $\rightarrow$ сильная \\
 Средняя уверенность
   & \texttt{corn}
   & 0.376
-  & 0.236
-  & $-0.140$
-  & \texttt{soybeans} (0.598)
+  & 0.306
+  & $-0.070$
+  & \texttt{soybeans} (0.588)
   & слабая $\rightarrow$ слабая \\
 Низкая уверенность
   & \texttt{legumes}
   & 0.011
-  & 0.071
-  & $+0.060$
-  & \texttt{soybeans} (0.698)
+  & 0.061
+  & $+0.050$
+  & \texttt{soybeans} (0.688)
   & слабая $\rightarrow$ слабая \\
 Сложный класс
   & \texttt{corn}
   & 0.220
   & 0.220
   & $\phantom{+}0.000$
-  & \texttt{soybeans} (0.386)
+  & \texttt{soybeans} (0.436)
   & слабая $\rightarrow$ слабая \\
 \bottomrule
 \end{tabular}
 
 \vspace{0.4em}
 \footnotesize $gs$ --- \texttt{graph\_support\_score}; $\Delta gs$ --- разность между значением с учётом литературных правил
-и базовым значением для первой рекомендации модели.
+и базовым значением для первой рекомендации модели. Литературные правила не меняют модельный ранг и вероятности
+CatBoost; таблица отражает только изменение графовой интерпретационной поддержки.
 \normalsize
 \end{table}
