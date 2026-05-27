@@ -1,6 +1,8 @@
 venv/
 national1724.pkl
-dataset/
+dataset/*
+!dataset/README.md
+.idea/
 
 # Unified experiment artifacts (models, checkpoints, reports)
 artifacts/
